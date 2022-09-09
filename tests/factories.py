@@ -1,6 +1,6 @@
 import factory.django
 
-from ad.models import Ad
+from ad.models import Ad, Selection
 from user.models import User
 
 
@@ -23,3 +23,12 @@ class AdFactory(factory.django.DjangoModelFactory):
 	price = 1300
 	is_published = False
 	author = factory.SubFactory(UserFactory)
+
+
+class SelectionFactory(factory.django.DjangoModelFactory):
+	class Meta:
+		model = Selection
+
+	name = 'test selection'
+	owner = factory.SubFactory(UserFactory)
+	items = []
