@@ -2,7 +2,7 @@ import pytest
 
 
 @pytest.mark.django_db
-def create_ad(client, user):
+def test_create_ad(client, user):
 	expected_response = {
 		"id": 1,
 		"category": None,

@@ -2,7 +2,7 @@ import pytest
 
 
 @pytest.mark.django_db
-def create_selection(client, ad, user_token):
+def test_create_selection(client, ad, user_token):
 	expected_response = {
 		"id": 1,
 		"name": "test selection",
