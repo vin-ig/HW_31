@@ -8,10 +8,10 @@ class UserFactory(factory.django.DjangoModelFactory):
 	class Meta:
 		model = User
 
-	username = 'test_username'
+	username = factory.Faker('name')
 	password = 'password'
 	role = 'admin'
-	email = 'test@email.ru'
+	email = factory.Faker('email')
 	birth_date = '1988-10-11'
 
 
@@ -23,12 +23,3 @@ class AdFactory(factory.django.DjangoModelFactory):
 	price = 1300
 	is_published = False
 	author = factory.SubFactory(UserFactory)
-
-
-class SelectionFactory(factory.django.DjangoModelFactory):
-	class Meta:
-		model = Selection
-
-	name = 'test selection'
-	owner = factory.SubFactory(UserFactory)
-	items = []
